@@ -99,14 +99,14 @@ Public Class Form1
 
         updatetable()
     End Sub
-    'DELETE button functionality
+    'Functionality of the DELETE button
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
             sqlconn = New SqlConnection()
             sqlconn.ConnectionString = $"Server={Server};Database={Database};Integrated Security=True;"
 
             sqlconn.Open()
-            'deletes the row wher a certain title exists
+            'deletes the row where a certain title exists
             sqlQuery = "DELETE FROM Books WHERE Title = @Title"
 
             sqlcmd = New SqlCommand(sqlQuery, sqlconn)
@@ -127,14 +127,14 @@ Public Class Form1
         updatetable()
     End Sub
 
-    'CLEAR button functionality
+    'Functionality of the CLEAR button
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         Try
             sqlconn = New SqlConnection()
             sqlconn.ConnectionString = $"Server={Server};Database={Database};Integrated Security=True;"
 
             sqlconn.Open()
-            'deletes all from table books
+            'deletes everything from table books
             sqlQuery = "DELETE FROM Books"
 
             sqlcmd = New SqlCommand(sqlQuery, sqlconn)
